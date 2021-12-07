@@ -22,14 +22,15 @@ class Solution:
         stack = []
         cur = root
         while len(stack) > 0 or cur:
-            # 当前节点到左节点依次入栈
             while cur:
+                # 入栈左移
                 stack.append(cur)
                 cur = cur.left
-            # 左节点到当前节点依次出栈
+            # 出栈
             cur = stack.pop()
+            # 右移前存入结果
             result.append(cur.val)
-            # 访问右节点
+            # 右移
             cur = cur.right
         return result
 # @lc code=end
